@@ -1,24 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import ErrorBoundary from './Components/ErrorBoudary/ErrorBoudary';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import HomeTemplate from './Templates/HomeTemplate';
+import SignIn from './Pages/SignIn/SignIn.jsx'
+import SignUp from './Pages/SignUp/SignUp.jsx'
+import HomePage from './Pages/Homepage/HomePage.jsx'
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ErrorBoundary>
+      <BrowserRouter>
+        <Routes>
+          <Route path="" element={<HomeTemplate />}>
+            <Route path='login' element={<SignIn />}></Route>
+            <Route path='register' element={<SignUp />}></Route>
+            <Route index element={<HomePage />}></Route>
+            <Route path="*" element={<Navigate to={""} />}></Route>
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </ErrorBoundary>
+
+
   );
 }
 
