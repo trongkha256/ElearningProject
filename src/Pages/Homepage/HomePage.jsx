@@ -9,7 +9,7 @@ const HomePage = () => {
     <>
       <CarouselSlider />
       <CourseShowing />
-      {/* <Footer /> */}
+      <Footer />
       <ScrollTopArrow />
     </>
   );

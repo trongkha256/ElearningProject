@@ -1,108 +1,62 @@
-import React from 'react'
+import { FooterComponent } from "flowbite-react";
+import React from "react";
 
 const Footer = () => {
-    return (
-        <Footer bgDark={true}>
-            <div className="w-full">
-                <div className="grid w-full grid-cols-2 gap-8 py-8 px-6 md:grid-cols-4">
-                    <div>
-                        <Footer.Title title="Company" />
-                        <Footer.LinkGroup col={true}>
-                            <Footer.Link href="#">
-                                About
-                            </Footer.Link>
-                            <Footer.Link href="#">
-                                Careers
-                            </Footer.Link>
-                            <Footer.Link href="#">
-                                Brand Center
-                            </Footer.Link>
-                            <Footer.Link href="#">
-                                Blog
-                            </Footer.Link>
-                        </Footer.LinkGroup>
-                    </div>
-                    <div>
-                        <Footer.Title title="help center" />
-                        <Footer.LinkGroup col={true}>
-                            <Footer.Link href="#">
-                                Discord Server
-                            </Footer.Link>
-                            <Footer.Link href="#">
-                                Twitter
-                            </Footer.Link>
-                            <Footer.Link href="#">
-                                Facebook
-                            </Footer.Link>
-                            <Footer.Link href="#">
-                                Contact Us
-                            </Footer.Link>
-                        </Footer.LinkGroup>
-                    </div>
-                    <div>
-                        <Footer.Title title="legal" />
-                        <Footer.LinkGroup col={true}>
-                            <Footer.Link href="#">
-                                Privacy Policy
-                            </Footer.Link>
-                            <Footer.Link href="#">
-                                Licensing
-                            </Footer.Link>
-                            <Footer.Link href="#">
-                                Terms & Conditions
-                            </Footer.Link>
-                        </Footer.LinkGroup>
-                    </div>
-                    <div>
-                        <Footer.Title title="download" />
-                        <Footer.LinkGroup col={true}>
-                            <Footer.Link href="#">
-                                iOS
-                            </Footer.Link>
-                            <Footer.Link href="#">
-                                Android
-                            </Footer.Link>
-                            <Footer.Link href="#">
-                                Windows
-                            </Footer.Link>
-                            <Footer.Link href="#">
-                                MacOS
-                            </Footer.Link>
-                        </Footer.LinkGroup>
-                    </div>
-                </div>
-                <div className="w-full bg-gray-700 py-6 px-4 sm:flex sm:items-center sm:justify-between">
-                    <Footer.Copyright
-                        href="#"
-                        by="Flowbite™"
-                        year={2022}
-                    />
-                    <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
-                        <Footer.Icon
-                            href="#"
-                            icon={'BsFacebook'}
-                        />
-                        <Footer.Icon
-                            href="#"
-                            icon={'BsInstagram'}
-                        />
-                        <Footer.Icon
-                            href="#"
-                            icon={'BsTwitter'}
-                        />
-                        <Footer.Icon
-                            href="#"
-                            icon={'BsGithub'}
-                        />
-                        <Footer.Icon
-                            href="#"
-                            icon={'BsDribbble'}
-                        />
-                    </div>
-                </div>
-            </div>
-        </Footer>
-    )
-}
+  return (
+    <FooterComponent>
+      <div className="w-full">
+        <div className=" bg-[#212121] grid w-full grid-cols-2 gap-8 py-8 px-6 md:grid-cols-4">
+          <div>
+            <FooterComponent.LinkGroup col={true}>
+              <FooterComponent.Link href="#">About</FooterComponent.Link>
+              <FooterComponent.Link href="#">Careers</FooterComponent.Link>
+              <FooterComponent.Link href="#">Brand Center</FooterComponent.Link>
+              <FooterComponent.Link href="#">Blog</FooterComponent.Link>
+            </FooterComponent.LinkGroup>
+          </div>
+          <div>
+            <FooterComponent.LinkGroup col={true}>
+              <FooterComponent.Link href="#">
+                Discord Server
+              </FooterComponent.Link>
+              <FooterComponent.Link href="#">Twitter</FooterComponent.Link>
+              <FooterComponent.Link href="#">Facebook</FooterComponent.Link>
+              <FooterComponent.Link href="#">Contact Us</FooterComponent.Link>
+            </FooterComponent.LinkGroup>
+          </div>
+          <div>
+            <FooterComponent.LinkGroup col={true}>
+              <FooterComponent.Link href="#">
+                Privacy Policy
+              </FooterComponent.Link>
+              <FooterComponent.Link href="#">Licensing</FooterComponent.Link>
+              <FooterComponent.Link href="#">
+                Terms & Conditions
+              </FooterComponent.Link>
+            </FooterComponent.LinkGroup>
+          </div>
+          <div>
+            <FooterComponent.LinkGroup col={true}>
+              <FooterComponent.Link href="#">iOS</FooterComponent.Link>
+              <FooterComponent.Link href="#">Android</FooterComponent.Link>
+              <FooterComponent.Link href="#">Windows</FooterComponent.Link>
+              <FooterComponent.Link href="#">MacOS</FooterComponent.Link>
+            </FooterComponent.LinkGroup>
+          </div>
+        </div>
+        <div className="w-full bg-gray-700 py-6 px-4 sm:flex sm:items-center sm:justify-between">
+          <FooterComponent.Copyright href="#" by="KhaPK™" year={2022} />
+          <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
+            <FooterComponent.Icon href="#" icon={"BsFacebook"} />
+            <FooterComponent.Icon href="#" icon={"BsInstagram"} />
+            <FooterComponent.Icon href="#" icon={"BsTwitter"} />
+            <FooterComponent.Icon href="#" icon={"BsGithub"} />
+            <FooterComponent.Icon href="#" icon={"BsDribbble"} />
+          </div>
+        </div>
+      </div>
+    </FooterComponent>
+  );
+};
 
-export default Footer
+export default Footer;

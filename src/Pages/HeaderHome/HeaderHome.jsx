@@ -1,10 +1,62 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import { resetAuth } from "../../Slices/auth";
 
 const HeaderHome = () => {
   //   const handleSubmit = (e) => {
   //     e.preventDefault();
   //   };
+  const [render, setRender] = useState(true);
+  const dispatch = useDispatch;
+  const { user } = useSelector((state) => state.auth);
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate(`account-info/${user.taiKhoan}`);
+  };
+  const renderStatus = () => {
+    if (user) {
+      return (
+        <>
+          <div
+            className=" hover:cursor-pointer"
+            onClick={() => {
+              navigate("/cart");
+            }}
+          >
+            <i className="fa fa-shopping-cart text-white lg:text-2xl s:text-xs sm:text-base md:text-xl hover:cursor-pointer"></i>
+          </div>
+          <div
+            onClick={() => handleClick()}
+            className="overflow-hidden relative w-10 h-10 bg-gray-100 rounded-full dark:bg-gray-600  hover:cursor-pointer"
+          >
+            <img src="https://i.pravatar.cc/32" alt="avatar"></img>
+          </div>
+          <a href="/">
+            <button
+              className="block text-white bg-[#383838] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              type="button"
+              onClick={() => {
+                setRender(false);
+                localStorage.clear();
+                dispatch(resetAuth());
+              }}
+            >
+              Đăng xuất
+            </button>
+          </a>
+        </>
+      );
+    } else {
+      return (
+        <>
+          <NavLink to="/login">Đăng Nhập</NavLink>
+          <NavLink to="/register">Đăng Ký</NavLink>
+        </>
+      );
+    }
+  };
   return (
     <div className="bg-[#212121] h-24 text-white  fixed top-0 left-0 z-50 w-full lg:text-2xl s:text-sm sm:text-base md:text-xl">
       <div className="conatiner px-6 pr-7 pt-3 mx-auto flex items-center justify-between">
@@ -15,7 +67,11 @@ const HeaderHome = () => {
           </p>
         </NavLink>
         <div className="lg:w-2/5 bg-[#383838] rounded-2xl md:w-1/3 s:w-32">
-          <form>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+            }}
+          >
             <label
               htmlFor="default-search"
               className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300"
@@ -50,13 +106,7 @@ const HeaderHome = () => {
             </div>
           </form>
         </div>
-        <div className="flex justify-center gap-5">
-          <div>
-            <i className="fa fa-shopping-cart text-white lg:text-2xl s:text-xs sm:text-base md:text-xl"></i>
-          </div>
-          <NavLink to="/login">Đăng Nhập</NavLink>
-          <NavLink to="/register">Đăng Ký</NavLink>
-        </div>
+        <div className="flex justify-center gap-5">{renderStatus()}</div>
       </div>
     </div>
   );
