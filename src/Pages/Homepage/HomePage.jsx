@@ -9,7 +9,6 @@ const HomePage = () => {
     <>
       <CarouselSlider />
       <CourseShowing />
-      <Footer />
       <ScrollTopArrow />
     </>
   );

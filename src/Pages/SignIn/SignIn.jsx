@@ -44,7 +44,7 @@ const Login = () => {
     }
   }
   return (
-    <div className="mt-36 w-1/3 h-105 rounded-2xl bg-white mx-auto">
+    <div className="mt-36 w-1/3 h-105 rounded-2xl bg-white mx-auto mb-10">
       <h1 className="text-center text-3xl font-bold  pt-5">ĐĂNG NHẬP</h1>
       {error && (
         <span className="text-red-600 block text-center mt-3">
@@ -98,12 +98,15 @@ const Login = () => {
             <span className="text-red-400">{errors.matKhau.message}</span>
           )}
         </div>
-        <button
+        <div className="flex justify-center"> 
+          <button
           type="submit"
-          className="text-white ml-52 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-        >
-          Đăng nhập
-        </button>
+          className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          >
+           Đăng nhập
+          </button>
+        </div>
+        
       </form>
       <div className="mx-5 mt-5 flex justify-center">
         <p className="text-[#00459F]">Bạn chưa có tài khoản?</p>

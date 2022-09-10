@@ -181,12 +181,15 @@ const Register = () => {
             <span className="text-red-400">{errors.soDT?.message}</span>
           )}
         </div>
+        <div className="flex justify-center">
         <button
           type="submit"
-          className="text-white ml-52 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          className="text-white mb-10 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
         >
           Đăng Ký
         </button>
+        </div>
+        
       </form>
       {error && (
         <span className="text-red-600 block text-center mb-10">

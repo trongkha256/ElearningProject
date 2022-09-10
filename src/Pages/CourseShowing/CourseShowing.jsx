@@ -5,8 +5,10 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getCourseShowing } from "../../Slices/course";
 import LoadingPage from "../../Components/LoadingPage/LoadingPage";
+import { useState } from "react";
 
 const CourseShowing = () => {
+  const [render,setRender]=useState(1);
   const dispatch = useDispatch();
 
   /*eslint-disable*/
@@ -38,7 +40,7 @@ const CourseShowing = () => {
             >
               <a href="#">
                 <img
-                  className="rounded-t-lg w-full h-56"
+                  className="rounded-t-lg w-full h-48 inline-block"
                   src={course.hinhAnh}
                   alt={course.biDanh}
                 />
