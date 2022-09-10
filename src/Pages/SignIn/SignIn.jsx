@@ -35,7 +35,7 @@ const Login = () => {
   }
   if (user) {
     if (user.maLoaiNguoiDung === "QuanTri") {
-      navigate("/dashboard");
+      navigate("/admin");
       // } else if (location?.state?.idSchedule) {
       //   navigate(`/bookticket/${location?.state?.idSchedule}`);
       // } else {
