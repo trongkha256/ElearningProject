@@ -1,6 +1,5 @@
 import './App.css';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+
 import ErrorBoundary from './Components/ErrorBoudary/ErrorBoudary';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import HomeTemplate from './Templates/HomeTemplate';

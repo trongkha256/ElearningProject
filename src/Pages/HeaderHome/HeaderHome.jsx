@@ -51,8 +51,8 @@ const HeaderHome = () => {
     } else {
       return (
         <>
-          <NavLink to="/login">Đăng Nhập</NavLink>
-          <NavLink to="/register">Đăng Ký</NavLink>
+          <NavLink to="/login" className="lg:text-2xl s:text-sm sm:text-base md:text-xl">Đăng Nhập</NavLink>
+          <NavLink to="/register" className="lg:text-2xl s:text-sm sm:text-base md:text-xl">Đăng Ký</NavLink>
         </>
       );
     }
