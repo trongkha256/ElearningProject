@@ -1,5 +1,5 @@
 import axios from "axios";
-// import store from "../configStore";
+import store from "../configStore";
 
 const axiosClient = axios.create({
     baseURL: "https://elearningnew.cybersoft.edu.vn/api/",
@@ -13,8 +13,8 @@ const axiosClient = axios.create({
 axiosClient.interceptors.request.use(function (config) {
     // Do something before request is sent
     if (config.headers) {
-        // const { accessToken = "" } = store.getState().auth.user || {}
-        const { accessToken = "" } = {}
+        const { accessToken = "" } = store.getState().auth.user || {}
+        // const { accessToken = "" } = {}
         if (accessToken) {
             config.headers.Authorization = `Bearer ${accessToken}`
         }
