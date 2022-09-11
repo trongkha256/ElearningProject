@@ -10,6 +10,7 @@ import CourseDetail from './Pages/CourseDetail/CourseDetail';
 import { AccoutInfo } from './Pages/AccountInfo/AccoutInfo';
 import { useSelector } from 'react-redux';
 import Cart from './Pages/Cart/Cart';
+import ContentDetail from './Pages/ContentDetail/ContentDetail';
 
 
 function App() {
@@ -22,10 +23,11 @@ function App() {
             {!user && <Route path='login' element={<SignIn />}></Route>}
             {!user && <Route path='register' element={<SignUp />}></Route>}
             <Route path='course/:id' element={<CourseDetail />}></Route>
+            <Route path='DanhMuc/:id' element={<ContentDetail />}></Route>
             {user && <Route path='account-info/:taiKhoan' element={<AccoutInfo />}></Route>}
             {user && <Route path='cart' element={<Cart />} ></Route>}
             <Route index element={<HomePage />}></Route>
-            <Route path="*" element={<Navigate to={""} />}></Route>
+            {/* <Route path="*" element={<Navigate to={""} />}></Route> */}
           </Route>
         </Routes>
       </BrowserRouter>
