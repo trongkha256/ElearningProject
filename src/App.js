@@ -27,7 +27,7 @@ function App() {
             {user && <Route path='account-info/:taiKhoan' element={<AccoutInfo />}></Route>}
             {user && <Route path='cart' element={<Cart />} ></Route>}
             <Route index element={<HomePage />}></Route>
-            {/* <Route path="*" element={<Navigate to={""} />}></Route> */}
+            <Route path="*" element={<Navigate to={""} />}></Route>
           </Route>
         </Routes>
       </BrowserRouter>

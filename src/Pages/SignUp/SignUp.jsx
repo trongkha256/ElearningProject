@@ -44,7 +44,6 @@ const Register = () => {
   const { user, isLoading, error } = useSelector((state) => state.registerAuth);
 
   const onSubmit = (values) => {
-    console.log("vale", values.maNhom);
     dispatch(registerAction(values));
   };
   if (isLoading) {

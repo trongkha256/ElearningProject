@@ -11,7 +11,6 @@ import LoadingPage from "../../Components/LoadingPage/LoadingPage";import { getC
 const ContentDetail = () => {
   const dispatch = useDispatch();
   const {id} =useParams();
-  console.log(id)
 
   /*eslint-disable*/
   useEffect(() => {

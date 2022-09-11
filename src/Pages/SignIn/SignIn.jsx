@@ -26,7 +26,6 @@ const Login = () => {
     dispatch(loginAction(value));
     setRender(!render);
   };
-  console.log(user);
   const onError = (error) => {
     console.log(error);
   };

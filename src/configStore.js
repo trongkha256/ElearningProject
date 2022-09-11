@@ -4,6 +4,8 @@ import auth from './Slices/auth';
 import registerAuth from './Slices/registerAuth';
 import content from './Slices/content';
 import courseContent from './Slices/courseContent';
+import courseDetail from './Slices/courseDetail';
+import cart from './Slices/cart';
 
 
 const store = configureStore({
@@ -12,7 +14,9 @@ const store = configureStore({
         auth,
         registerAuth,
         content,
-        courseContent
+        courseContent,
+        courseDetail,
+        cart,
 
     },
 })

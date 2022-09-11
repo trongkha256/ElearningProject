@@ -6,7 +6,6 @@ const contentAPI = {
 
     },
     getCourseContent: (contentId)=>{
-        console.log(contentId)
         return axiosClient.get(`QuanLyKhoaHoc/LayKhoaHocTheoDanhMuc?maDanhMuc=${contentId}&MaNhom=GP01`);
     }
 }
