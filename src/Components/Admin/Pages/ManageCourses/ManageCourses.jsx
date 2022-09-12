@@ -171,15 +171,25 @@ const ManageCourses = () => {
                             <div className="mb-6 mx-5">
                                 <label className="block mb-2 text-xl font-medium text-gray-900 dark:text-gray-300">
                                     Danh mục khóa học
-
                                 </label>
+                                <select
+                                    className=" bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    {...register("maDanhMucKhoaHoc", { required: true })}>
+                                    <option value="BackEnd">Lập trình Backend</option>
+                                    <option value="Design">Thiết kế Web</option>
+                                    <option value="DiDong">Lập trình di động</option>
+                                    <option value="FrontEnd">Lập trình Front end</option>
+                                    <option value="FullStack">Lập trình Full Stack</option>
+                                    <option value="TuDuy">Tư duy lập trình</option>
+                                </select>
+                                {/* 
                                 <input className=" bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                     type="text" {...register("maDanhMucKhoaHoc", {
                                         required: {
                                             value: true,
                                             message: "Mật khẩu không được để trống",
                                         },
-                                    })} />
+                                    })} /> */}
                             </div>
                         </div>
                     </div>
@@ -212,6 +222,9 @@ const ManageCourses = () => {
                                 Tên khóa học
                             </Table.HeadCell>
                             <Table.HeadCell>
+                             Danh mục khóa học
+                            </Table.HeadCell>
+                            <Table.HeadCell>
                                 Ngày tạo
                             </Table.HeadCell>
                             <Table.HeadCell>
@@ -231,10 +244,13 @@ const ManageCourses = () => {
                             </Table.HeadCell>
                         </Table.Head>
                         <Table.Body className="divide-y">
-                            {courses.map((course,index) =>
+                            {courses.map((course, index) =>
                                 <Table.Row key={course.maKhoaHoc} className="bg-white dark:border-gray-700 dark:bg-gray-800">
                                     <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
                                         {course.maKhoaHoc}
+                                    </Table.Cell>
+                                    <Table.Cell>
+                                        {course.tenKhoaHoc}
                                     </Table.Cell>
                                     <Table.Cell>
                                         {course.tenKhoaHoc}
