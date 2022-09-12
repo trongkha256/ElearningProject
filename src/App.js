@@ -10,6 +10,9 @@ import CourseDetail from './Pages/CourseDetail/CourseDetail';
 import { AccoutInfo } from './Pages/AccountInfo/AccoutInfo';
 import { useSelector } from 'react-redux';
 import Cart from './Pages/Cart/Cart';
+import AdminHome from './Components/Admin/Pages/AdminHome/AdminHome';
+import ManageCourses from './Components/Admin/Pages/ManageCourses/ManageCourses';
+import ManageUsers from './Components/Admin/Pages/ManageUsers/ManageUsers';
 import ContentDetail from './Pages/ContentDetail/ContentDetail';
 
 
@@ -19,6 +22,13 @@ function App() {
     <ErrorBoundary>
       <BrowserRouter>
         <Routes>
+
+          <Route path='admin' element={<HomeTemplate />}>
+            <Route path="quanLyKhoaHoc" element={<ManageCourses />}></Route>
+            <Route path="quanLyNguoiDung" element={<ManageUsers />}></Route>
+            <Route index element={<AdminHome />} ></Route>
+          </Route>
+
           <Route path="" element={<HomeTemplate />}>
             {!user && <Route path='login' element={<SignIn />}></Route>}
             {!user && <Route path='register' element={<SignUp />}></Route>}
