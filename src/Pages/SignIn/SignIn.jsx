@@ -44,7 +44,7 @@ const Login = () => {
   }
   return (
     <div className="mt-36 w-1/3 h-105 rounded-2xl bg-white mx-auto mb-10">
-      <h1 className="text-center text-3xl font-bold  pt-5">ĐĂNG NHẬP</h1>
+      <h1 className="text-center text-3xl font-bold  pt-5 mb-5">ĐĂNG NHẬP</h1>
       {error && (
         <span className="text-red-600 block text-center mt-3">
           Tài khoản hoặc Mật khẩu không chính xác.

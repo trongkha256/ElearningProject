@@ -15,6 +15,7 @@ const courseAPI = {
     },
     updateCourse: (courseData) => {
         return axiosClient.put("QuanLyKhoaHoc/CapNhatKhoaHoc", courseData)
+    },
     getCourseDetail: (courseId)=>{
         return axiosClient.get(`https://elearningnew.cybersoft.edu.vn/api/QuanLyKhoaHoc/LayThongTinKhoaHoc?maKhoaHoc=${courseId}`)
     }

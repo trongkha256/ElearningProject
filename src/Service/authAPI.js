@@ -7,6 +7,9 @@ const authAPI = {
     registerAcion: (data) => {
         return axiosClient.post("QuanLyNguoiDung/DangKy", data)
     },
+    getAccountDetail: (data)=>{
+        return axiosClient.post("QuanLyNguoiDung/ThongTinNguoiDung", data)
+    }
 }
 
 export default authAPI;

@@ -6,6 +6,7 @@ import content from './Slices/content';
 import courseContent from './Slices/courseContent';
 import courseDetail from './Slices/courseDetail';
 import cart from './Slices/cart';
+import acountDetail from './Slices/acountDetail';
 
 
 const store = configureStore({
@@ -17,6 +18,7 @@ const store = configureStore({
         courseContent,
         courseDetail,
         cart,
+        acountDetail
 
     },
 })

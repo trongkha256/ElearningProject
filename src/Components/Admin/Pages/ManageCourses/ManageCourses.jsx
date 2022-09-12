@@ -1,3 +1,4 @@
+import { Button, Table } from 'flowbite-react';
 import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
@@ -100,73 +101,99 @@ const ManageCourses = () => {
         <div style={{ paddingTop: "90px" }}>
             <div>
                 <form onSubmit={handleSubmit(handleFormSubmit, handleFormError)}>
-                    <h1>{
+                    <h1 className="text-center text-3xl font-bold  pt-5 mb-5">{
                         isUpdateForm ?
                             "Cập nhật khóa học"
                             :
                             "Them Khoa Hoc"
                     }</h1>
+                    <div>
+                        <div className='flex justify-center align-middle'>
+                            <div className="mb-6 mx-5 mt-10">
+                                <label className="block mb-2 text-xl font-medium text-gray-900 dark:text-gray-300">
+                                    Mã Khóa học
 
-                    <label>
-                        Mã Khóa học
-                        <input type="text" {...register("maKhoaHoc", {
-                            required: {
-                                value: true,
-                                message: "Mật khẩu không được để trống",
-                            },
-                        })} />
-                    </label>
+                                </label>
+                                <input
+                                    className=" bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    type="text" {...register("maKhoaHoc", {
+                                        required: {
+                                            value: true,
+                                            message: "Mật khẩu không được để trống",
+                                        },
+                                    })} />
+                            </div>
+                            <div className="mb-6 mx-5 mt-10  w-1/3">
+                                <label className="block mb-2 text-xl font-medium text-gray-900 dark:text-gray-300">
+                                    Bí Danh
 
-                    <label>
-                        Bí Danh
-                        <input type="text" {...register("biDanh", {
-                            required: {
-                                value: true,
-                                message: "Mật khẩu không được để trống",
-                            },
-                        })} />
-                    </label>
+                                </label>
+                                <input
+                                    className=" bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    type="text" {...register("biDanh", {
+                                        required: {
+                                            value: true,
+                                            message: "Mật khẩu không được để trống",
+                                        },
+                                    })} />
+                            </div>
+                            <div className="mb-6 mx-5 mt-10  w-1/4" >
+                                <label className="block mb-2 text-xl font-medium text-gray-900 dark:text-gray-300">
+                                    Tên Khoá Học
 
-                    <label>
-                        Tên Khoá Học
-                        <input type="text" {...register("tenKhoaHoc", {
-                            required: {
-                                value: true,
-                                message: "Mật khẩu không được để trống",
-                            },
-                        })} />
-                    </label>
+                                </label>
+                                <input
+                                    className=" bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    type="text" {...register("tenKhoaHoc", {
+                                        required: {
+                                            value: true,
+                                            message: "Mật khẩu không được để trống",
+                                        },
+                                    })} />
+                            </div>
 
-                    <label>
-                        Mô tả
-                        <input type="text" {...register("moTa", {
-                            required: {
-                                value: true,
-                                message: "Mật khẩu không được để trống",
-                            },
-                        })} />
-                    </label>
+                        </div>
+                        <div className='flex justify-center align-middle'>
+                            <div className="mb-6 mx-5 w-1/2">
+                                <label className="block mb-2 text-xl font-medium text-gray-900 dark:text-gray-300">
+                                    Mô tả
 
-                    <label>
-                        Danh mục khóa học
-                        <input type="text" {...register("maDanhMucKhoaHoc", {
-                            required: {
-                                value: true,
-                                message: "Mật khẩu không được để trống",
-                            },
-                        })} />
-                    </label>
+                                </label>
+                                <input
+                                    className=" bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    type="text" {...register("moTa", {
+                                        required: {
+                                            value: true,
+                                            message: "Mật khẩu không được để trống",
+                                        },
+                                    })} />
+                            </div>
+                            <div className="mb-6 mx-5">
+                                <label className="block mb-2 text-xl font-medium text-gray-900 dark:text-gray-300">
+                                    Danh mục khóa học
 
-                    <button type="submit">{
-                        isUpdateForm ?
-                            "Cập nhật khóa học"
-                            :
-                            "Them Khoa Hoc"
-                    }</button>
-                    <br />
-                    {isUpdateForm && (
-                        <button onClick={handleCancelUpdateCourse}>Hủy cập nhật</button>
-                    )}
+                                </label>
+                                <input className=" bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    type="text" {...register("maDanhMucKhoaHoc", {
+                                        required: {
+                                            value: true,
+                                            message: "Mật khẩu không được để trống",
+                                        },
+                                    })} />
+                            </div>
+                        </div>
+                    </div>
+                    <div className='flex justify-center mb-5 gap-3'>
+                        <Button type="submit">{
+                            isUpdateForm ?
+                                "Cập nhật khóa học"
+                                :
+                                "Them Khoa Hoc"
+                        }</Button>
+                        {isUpdateForm && (
+                            <Button color="failure" onClick={handleCancelUpdateCourse}>Hủy cập nhật</Button>
+                        )}
+                    </div>
                 </form>
             </div>
 
@@ -175,7 +202,71 @@ const ManageCourses = () => {
                 <LoadingPage />
                 :
                 <div>
-                    <table>
+                    <Table>
+                        <Table.Head>
+                            <Table.HeadCell>
+                                Mã khóa học
+
+                            </Table.HeadCell>
+                            <Table.HeadCell>
+                                Tên khóa học
+                            </Table.HeadCell>
+                            <Table.HeadCell>
+                                Ngày tạo
+                            </Table.HeadCell>
+                            <Table.HeadCell>
+                                So luong hoc vien
+                            </Table.HeadCell>
+                            <Table.HeadCell>
+                                <span className="sr-only">
+                                    Update
+                                </span>
+
+                            </Table.HeadCell>
+                            <Table.HeadCell>
+                                <span className="sr-only">
+                                    Delete
+                                </span>
+
+                            </Table.HeadCell>
+                        </Table.Head>
+                        <Table.Body className="divide-y">
+                            {courses.map((course,index) =>
+                                <Table.Row key={course.maKhoaHoc} className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                                    <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                        {course.maKhoaHoc}
+                                    </Table.Cell>
+                                    <Table.Cell>
+                                        {course.tenKhoaHoc}
+                                    </Table.Cell>
+                                    <Table.Cell>
+                                        {course.ngayTao}
+                                    </Table.Cell>
+                                    <Table.Cell>
+                                        {course.soLuongHocVien}
+                                    </Table.Cell>
+                                    <Table.Cell>
+                                        <div
+                                            onClick={makeHandleUpdateCourse(index)}
+                                            className="hover:cursor-pointer font-medium text-blue-600 hover:underline dark:text-blue-500"
+                                        >
+                                            Update
+                                        </div>
+                                    </Table.Cell>
+                                    <Table.Cell>
+                                        <div
+                                            onClick={makeHandleDeleteCourse(index)}
+                                            className="hover:cursor-pointer font-medium text-red-600 hover:underline dark:text-blue-500"
+                                        >
+                                            Delete
+                                        </div>
+                                    </Table.Cell>
+                                </Table.Row>
+                            )}
+
+                        </Table.Body>
+                    </Table>
+                    {/* <table>
                         <tr>
                             <th>Ma Khoa Hoc</th>
                             <th>Bi Danh</th>
@@ -184,6 +275,7 @@ const ManageCourses = () => {
                             <th>Ngay Tao</th>
                             <th>Ma Nhom</th>
                             <th>So Luong Hoc Vien</th>
+                            <th></th>
                             <th></th>
                         </tr>
 
@@ -199,7 +291,7 @@ const ManageCourses = () => {
                             },
                             index
                         ) => (
-                            <tr key={maKhoaHoc}>
+                            <tr className='pb-5' key={maKhoaHoc}>
                                 <th>{maKhoaHoc}</th>
                                 <th>{biDanh}</th>
                                 <th>{tenKhoaHoc}</th>
@@ -208,12 +300,15 @@ const ManageCourses = () => {
                                 <th>{maNhom}</th>
                                 <th>{soLuongHocVien}</th>
                                 <th>
-                                    <button onClick={makeHandleUpdateCourse(index)}>Update</button>
-                                    <button onClick={makeHandleDeleteCourse(index)}>Delete</button>
+                                    <Button size="xs" onClick={makeHandleUpdateCourse(index)}>Update</Button>
+
+                                </th>
+                                <th>
+                                    <Button size="xs" onClick={makeHandleDeleteCourse(index)}>Delete</Button>
                                 </th>
                             </tr>
                         ))}
-                    </table>
+                    </table> */}
                 </div>
             }
 

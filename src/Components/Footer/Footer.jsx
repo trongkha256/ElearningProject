@@ -47,11 +47,7 @@ const Footer = () => {
         <div className="w-full bg-gray-700 py-6 px-4 sm:flex sm:items-center sm:justify-between">
           <FooterComponent.Copyright href="#" by="KhaPK™" year={2022} />
           <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
-            <FooterComponent.Icon href="#" icon={"BsFacebook"} />
-            <FooterComponent.Icon href="#" icon={"BsInstagram"} />
-            <FooterComponent.Icon href="#" icon={"BsTwitter"} />
-            <FooterComponent.Icon href="#" icon={"BsGithub"} />
-            <FooterComponent.Icon href="#" icon={"BsDribbble"} />
+            
           </div>
         </div>
       </div>
