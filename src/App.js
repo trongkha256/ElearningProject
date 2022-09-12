@@ -1,6 +1,5 @@
 import './App.css';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+
 import ErrorBoundary from './Components/ErrorBoudary/ErrorBoudary';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import HomeTemplate from './Templates/HomeTemplate';
@@ -14,6 +13,7 @@ import Cart from './Pages/Cart/Cart';
 import AdminHome from './Components/Admin/Pages/AdminHome/AdminHome';
 import ManageCourses from './Components/Admin/Pages/ManageCourses/ManageCourses';
 import ManageUsers from './Components/Admin/Pages/ManageUsers/ManageUsers';
+import ContentDetail from './Pages/ContentDetail/ContentDetail';
 
 
 function App() {
@@ -33,6 +33,7 @@ function App() {
             {!user && <Route path='login' element={<SignIn />}></Route>}
             {!user && <Route path='register' element={<SignUp />}></Route>}
             <Route path='course/:id' element={<CourseDetail />}></Route>
+            <Route path='DanhMuc/:id' element={<ContentDetail />}></Route>
             {user && <Route path='account-info/:taiKhoan' element={<AccoutInfo />}></Route>}
             {user && <Route path='cart' element={<Cart />} ></Route>}
             <Route index element={<HomePage />}></Route>

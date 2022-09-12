@@ -26,7 +26,6 @@ const Login = () => {
     dispatch(loginAction(value));
     setRender(!render);
   };
-  console.log(user);
   const onError = (error) => {
     console.log(error);
   };
@@ -35,7 +34,7 @@ const Login = () => {
   }
   if (user) {
     if (user.maLoaiNguoiDung === "QuanTri") {
-      navigate("/dashboard");
+      navigate("/admin");
       // } else if (location?.state?.idSchedule) {
       //   navigate(`/bookticket/${location?.state?.idSchedule}`);
       // } else {
