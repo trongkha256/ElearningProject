@@ -13,7 +13,7 @@ const ManageCourses = () => {
     const { courses, isLoading } = useSelector((state) => state.course);
     const { user } = useSelector(state => state.auth)
     const [isUpdateForm, setIsUpdateForm] = useState(false)
-
+    /*eslint-disable*/
     const {
         register,
         handleSubmit,

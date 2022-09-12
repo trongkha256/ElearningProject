@@ -111,7 +111,7 @@ const courseSlice = createSlice({
             state.isLoading = false
 
             const index = state.courses.findIndex(c => c.maKhoaHoc === payload.maKhoaHoc)
-            if (index != -1) {
+            if (index !== -1) {
                 state.courses[index] = payload;
             }
         })
