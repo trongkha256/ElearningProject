@@ -10,7 +10,7 @@ import LoadingPage from '../../../LoadingPage/LoadingPage';
 
 const ManageUser = () => {
     const dispatch = useDispatch()
-    const { users, isLoading } = useSelector((state) => state.user);
+    const { users, isLoading, error } = useSelector((state) => state.user);
     const [isUpdateForm, setIsUpdateForm] = useState(false)
     /*eslint-disable*/
     const {
@@ -57,6 +57,9 @@ const ManageUser = () => {
 
     const makeHandleDeleteUser = (index) => () => {
         dispatch(deleteUser(users[index].taiKhoan))
+        if (error != null) {
+            alert(error.message);
+        }
     }
 
     const makeHandleUpdateUser = (index) => () => {

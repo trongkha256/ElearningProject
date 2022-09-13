@@ -73,6 +73,7 @@ const courseSlice = createSlice({
         });
         builder.addCase(getCourseShowing.fulfilled, (state, { payload }) => {
             state.isLoading = false;
+            state.error=null;
             state.courses = payload;
         });
         builder.addCase(getCourseShowing.rejected, (state, { error }) => {
@@ -85,6 +86,7 @@ const courseSlice = createSlice({
         })
         builder.addCase(deleteCourse.fulfilled, (state, { payload }) => {
             state.isLoading = false
+            state.error=null;
             state.courses = state.courses.filter(course => course.maKhoaHoc !== payload)
         })
         builder.addCase(deleteCourse.rejected, (state, { error }) => {
@@ -97,6 +99,7 @@ const courseSlice = createSlice({
         })
         builder.addCase(createCourse.fulfilled, (state, { payload }) => {
             state.isLoading = false
+            state.error=null;
             state.courses = [payload, ...state.courses]
         })
         builder.addCase(createCourse.rejected, (state, { error }) => {
@@ -109,7 +112,7 @@ const courseSlice = createSlice({
         })
         builder.addCase(updateCourse.fulfilled, (state, { payload }) => {
             state.isLoading = false
-
+            state.error=null;
             const index = state.courses.findIndex(c => c.maKhoaHoc === payload.maKhoaHoc)
             if (index !== -1) {
                 state.courses[index] = payload;

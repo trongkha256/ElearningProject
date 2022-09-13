@@ -73,6 +73,7 @@ const userSlice = createSlice({
         });
         builder.addCase(getUserShowing.fulfilled, (state, { payload }) => {
             state.isLoading = false;
+            state.error=null;
             state.users = payload;
         });
         builder.addCase(getUserShowing.rejected, (state, { error }) => {
@@ -85,6 +86,7 @@ const userSlice = createSlice({
         })
         builder.addCase(deleteUser.fulfilled, (state, { payload }) => {
             state.isLoading = false
+            state.error=null;
             state.users = state.users.filter(user => user.taiKhoan !== payload)
         })
         builder.addCase(deleteUser.rejected, (state, { error }) => {
@@ -97,6 +99,7 @@ const userSlice = createSlice({
         })
         builder.addCase(createUser.fulfilled, (state, { payload }) => {
             state.isLoading = false
+            state.error=null;
             state.users = [payload, ...state.users]
         })
         builder.addCase(createUser.rejected, (state, { error }) => {
@@ -109,7 +112,7 @@ const userSlice = createSlice({
         })
         builder.addCase(updateUser.fulfilled, (state, { payload }) => {
             state.isLoading = false
-
+            state.error=null;
             const index = state.users.findIndex(c => c.taiKhoan === payload.taiKhoan)
             if (index !== -1) {
                 state.users[index] = payload;
