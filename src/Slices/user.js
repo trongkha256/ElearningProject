@@ -27,7 +27,7 @@ export const deleteUser = createAsyncThunk(
         try {
             const data = await authAPI.deleteUser(maKhachHang)
             console.log(data) // "Xóa thành công"
-            return data
+            return maKhachHang;
         }
         catch (error) {
             throw error;

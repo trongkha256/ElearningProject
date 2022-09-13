@@ -10,7 +10,7 @@ import LoadingPage from '../../../LoadingPage/LoadingPage';
 
 const ManageCourses = () => {
     const dispatch = useDispatch()
-    const { courses, isLoading } = useSelector((state) => state.course);
+    const { courses, isLoading, error } = useSelector((state) => state.course);
     const { user } = useSelector(state => state.auth)
     const [isUpdateForm, setIsUpdateForm] = useState(false)
     /*eslint-disable*/
@@ -70,6 +70,10 @@ const ManageCourses = () => {
 
     const makeHandleDeleteCourse = (index) => () => {
         dispatch(deleteCourse(courses[index].maKhoaHoc))
+        if (error!=null){
+            alert(error.message)
+        }
+        
     }
 
     const makeHandleUpdateCourse = (index) => () => {
@@ -96,6 +100,7 @@ const ManageCourses = () => {
         }
         resetFormData()
     }
+    
 
     return (
         <div style={{ paddingTop: "90px" }}>
