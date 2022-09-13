@@ -1,13 +1,14 @@
 import React from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { resetAuth } from "../../Slices/auth";
 
 const HeaderHome = () => {
   //   const handleSubmit = (e) => {
   //     e.preventDefault();
   //   };
+  /*eslint-disable*/
   const [render, setRender] = useState(true);
   const dispatch = useDispatch;
   const { user } = useSelector((state) => state.auth);
@@ -51,8 +52,18 @@ const HeaderHome = () => {
     } else {
       return (
         <>
-          <NavLink to="/login" className="lg:text-2xl s:text-sm sm:text-base md:text-xl">Đăng Nhập</NavLink>
-          <NavLink to="/register" className="lg:text-2xl s:text-sm sm:text-base md:text-xl">Đăng Ký</NavLink>
+          <NavLink
+            to="/login"
+            className="lg:text-2xl s:text-sm sm:text-base md:text-xl"
+          >
+            Đăng Nhập
+          </NavLink>
+          <NavLink
+            to="/register"
+            className="lg:text-2xl s:text-sm sm:text-base md:text-xl"
+          >
+            Đăng Ký
+          </NavLink>
         </>
       );
     }

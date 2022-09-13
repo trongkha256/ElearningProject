@@ -1,6 +1,4 @@
 import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { object, string } from "yup";
 import { useDispatch, useSelector } from "react-redux";
 import LoadingPage from "../../Components/LoadingPage/LoadingPage";
 import { registerAction } from "../../Slices/registerAuth";
@@ -181,14 +179,13 @@ const Register = () => {
           )}
         </div>
         <div className="flex justify-center">
-        <button
-          type="submit"
-          className="text-white mb-10 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-        >
-          Đăng Ký
-        </button>
+          <button
+            type="submit"
+            className="text-white mb-10 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          >
+            Đăng Ký
+          </button>
         </div>
-        
       </form>
       {error && (
         <span className="text-red-600 block text-center mb-10">
