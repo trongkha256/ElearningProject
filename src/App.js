@@ -17,17 +17,19 @@ import ContentDetail from "./Pages/ContentDetail/ContentDetail";
 
 function App() {
   const { user } = useSelector((state) => state.auth);
-  let check=true;
-  if (user != null ){
-    if (user.maLoaiNguoiDung === "GV"){
-      check=false;
+  let check = true;
+  if (user != null) {
+    if (user.maLoaiNguoiDung === "GV") {
+      check = false;
+
     }
   }
+  //ahsghasgasg
   return (
     <ErrorBoundary>
       <BrowserRouter>
         <Routes>
-          { !check ? (
+          {!check ? (
             <Route path="" element={<HomeTemplate />}>
               <Route path="quanLyKhoaHoc" element={<ManageCourses />}></Route>
               <Route path="quanLyNguoiDung" element={<ManageUsers />}></Route>
